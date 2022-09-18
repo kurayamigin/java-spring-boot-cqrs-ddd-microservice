@@ -8,7 +8,6 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table
 public class Game extends AuditableLogicEntity<Long> {
     @Length(max = 250)
     private String name;
@@ -25,6 +24,7 @@ public class Game extends AuditableLogicEntity<Long> {
     @ManyToMany
     private List<Genre> genres;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "release_date")
     private Date releaseDate;
 

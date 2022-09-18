@@ -13,22 +13,21 @@
 
     <changeSet id="1" author="me">
         <addColumn tableName="Game">
-            <column name="publisher_id" type="${key}">
-            </column>
+            <column name="publisher_id" type="${key}"/>
         </addColumn>
     </changeSet>
-    <changeSet id="3" author="me">
+    <changeSet id="2" author="me">
         <addForeignKeyConstraint baseTableName="Game" baseColumnNames="publisher_id" constraintName="fk_game_publisher"
                                  referencedTableName="Publisher"
                                  referencedColumnNames="id"/>
     </changeSet>
-    <changeSet id="4" author="me">
+    <changeSet id="3" author="me">
         <update tableName="Game">
             <column name="publisher_id" value="1"/>
             <where>publisher_id is null</where>
         </update>
     </changeSet>
-    <changeSet id="5" author="me">
+    <changeSet id="4" author="me">
         <addNotNullConstraint tableName="Game" columnName="publisher_id" columnDataType="${key}"/>
     </changeSet>
 </databaseChangeLog>

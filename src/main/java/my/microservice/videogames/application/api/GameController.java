@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 @RestController
+@RequestMapping("game")
 public class GameController {
 
     private final IGameCommandService commandService;
