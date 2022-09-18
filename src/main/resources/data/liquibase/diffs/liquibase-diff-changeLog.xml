@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="Gigabyte (generated)" id="1663043711818-1">
+        <createTable tableName="Genre">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="GenrePK"/>
+            </column>
+            <column name="createdBy" type="BIGINT"/>
+            <column name="createdDate" type="BLOB(255)"/>
+            <column name="updatedBy" type="BIGINT"/>
+            <column name="updatedDate" type="BLOB(255)"/>
+            <column name="active" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-2">
+        <createTable tableName="Publisher">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="PublisherPK"/>
+            </column>
+            <column name="createdBy" type="BIGINT"/>
+            <column name="createdDate" type="BLOB(255)"/>
+            <column name="updatedBy" type="BIGINT"/>
+            <column name="updatedDate" type="BLOB(255)"/>
+            <column name="active" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="address" type="VARCHAR(255)"/>
+            <column name="founded" type="timestamp"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="website_url" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-3">
+        <createTable tableName="Serie_Game">
+            <column name="Serie_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="games_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-4">
+        <addColumn tableName="Company">
+            <column name="createdBy" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-5">
+        <addColumn tableName="Game">
+            <column name="createdBy" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-6">
+        <addColumn tableName="Serie">
+            <column name="createdBy" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-7">
+        <addColumn tableName="Company">
+            <column name="createdDate" type="binary(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-8">
+        <addColumn tableName="Game">
+            <column name="createdDate" type="binary(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-9">
+        <addColumn tableName="Serie">
+            <column name="createdDate" type="binary(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-10">
+        <addColumn tableName="Game">
+            <column name="publisher_id" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-11">
+        <addColumn tableName="Company">
+            <column name="updatedBy" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-12">
+        <addColumn tableName="Game">
+            <column name="updatedBy" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-13">
+        <addColumn tableName="Serie">
+            <column name="updatedBy" type="bigint"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-14">
+        <addColumn tableName="Company">
+            <column name="updatedDate" type="binary(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-15">
+        <addColumn tableName="Game">
+            <column name="updatedDate" type="binary(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-16">
+        <addColumn tableName="Serie">
+            <column name="updatedDate" type="binary(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-17">
+        <addUniqueConstraint columnNames="games_id" tableName="Serie_Game"/>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-18">
+        <addForeignKeyConstraint baseColumnNames="publisher_id" baseTableName="Game" constraintName="FK_1pm2rrekb8kd76mrd57pxwydj" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="Publisher"/>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-19">
+        <addForeignKeyConstraint baseColumnNames="Serie_id" baseTableName="Serie_Game" constraintName="FK_kp3pb8qec678sgabm73ogwnjq" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="Serie"/>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-20">
+        <addForeignKeyConstraint baseColumnNames="games_id" baseTableName="Serie_Game" constraintName="FK_rfourthq2j8qdrkcbf91x25pb" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="Game"/>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-21">
+        <dropColumn columnName="CREATED_BY" tableName="COMPANY"/>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-22">
+        <dropColumn columnName="CREATED_BY" tableName="GAME"/>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-23">
+        <dropColumn columnName="CREATED_BY" tableName="SERIE"/>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-24">
+        <dropColumn columnName="CREATED_DATE" tableName="COMPANY"/>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-25">
+        <dropColumn columnName="CREATED_DATE" tableName="GAME"/>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-26">
+        <dropColumn columnName="CREATED_DATE" tableName="SERIE"/>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-27">
+        <dropColumn columnName="DEVELOPER_ID" tableName="GAME"/>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-28">
+        <dropColumn columnName="UPDATED_BY" tableName="COMPANY"/>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-29">
+        <dropColumn columnName="UPDATED_BY" tableName="GAME"/>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-30">
+        <dropColumn columnName="UPDATED_BY" tableName="SERIE"/>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-31">
+        <dropColumn columnName="UPDATED_DATE" tableName="COMPANY"/>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-32">
+        <dropColumn columnName="UPDATED_DATE" tableName="GAME"/>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-33">
+        <dropColumn columnName="UPDATED_DATE" tableName="SERIE"/>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-34">
+        <dropDefaultValue columnDataType="boolean" columnName="active" tableName="Company"/>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-35">
+        <dropDefaultValue columnDataType="boolean" columnName="active" tableName="Game"/>
+    </changeSet>
+    <changeSet author="Gigabyte (generated)" id="1663043711818-36">
+        <dropDefaultValue columnDataType="boolean" columnName="active" tableName="Serie"/>
+    </changeSet>
+</databaseChangeLog>

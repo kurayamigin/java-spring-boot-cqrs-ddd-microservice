@@ -1,0 +1,43 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+                        http://www.liquibase.org/xml/ns/pro
+                        http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
+>
+    <preConditions>
+        <runningAs username="dbuser"/>
+    </preConditions>
+    <changeSet id="1" author="me">
+        <createTable tableName="company">
+            <column name="id" type="${key}" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(150)"/>
+            <column name="founded" type="date"/>
+            <column name="website_url" type="varchar(max)"/>
+            <column name="icon_url" type="varchar(max)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="you">
+        <addColumn tableName="Company">
+            <column name="created_date" type="timestamp with time zone" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="${key}"/>
+            <column name="updated_date" type="timestamp with time zone" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="${key}"/>
+            <column name="active" type="bool" defaultValue="true">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>

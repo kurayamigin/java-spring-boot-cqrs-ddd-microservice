@@ -1,0 +1,38 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+                        http://www.liquibase.org/xml/ns/pro
+                        http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
+>
+    <preConditions>
+        <runningAs username="dbuser"/>
+    </preConditions>
+    <changeSet id="1" author="me">
+        <createTable tableName="game_genre">
+            <column name="id" type="${key}">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="game_id" type="${key}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="genre_id" type="${key}">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="me">
+        <addForeignKeyConstraint constraintName="fk_genre_game"
+                                 baseTableName="game_genre" baseColumnNames="game_id"
+                                 referencedTableName="game" referencedColumnNames="id"/>
+        <addForeignKeyConstraint constraintName="fk_game_genre"
+                                 baseTableName="game_genre" baseColumnNames="genre_id"
+                                 referencedTableName="genre" referencedColumnNames="id" />
+    </changeSet>
+
+</databaseChangeLog>
