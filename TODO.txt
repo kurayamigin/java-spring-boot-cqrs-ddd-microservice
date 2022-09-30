@@ -1,0 +1,6 @@
+TODO list
+
+- Resilience on db connections.
+- lombok
+- Mongo transactions
+- Created/Updated by...

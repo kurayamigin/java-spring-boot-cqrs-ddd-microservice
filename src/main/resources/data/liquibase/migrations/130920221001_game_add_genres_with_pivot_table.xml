@@ -14,24 +14,24 @@
         <runningAs username="dbuser"/>
     </preConditions>
     <changeSet id="1" author="me">
-        <createTable tableName="game_genre">
+        <createTable tableName="game_genres">
             <column name="id" type="${key}">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="game_id" type="${key}">
                 <constraints nullable="false"/>
             </column>
-            <column name="genre_id" type="${key}">
+            <column name="genres_id" type="${key}">
                 <constraints nullable="false"/>
             </column>
         </createTable>
     </changeSet>
     <changeSet id="2" author="me">
-        <addForeignKeyConstraint constraintName="fk_genre_game"
-                                 baseTableName="game_genre" baseColumnNames="game_id"
+        <addForeignKeyConstraint constraintName="fk_genres_game"
+                                 baseTableName="game_genres" baseColumnNames="game_id"
                                  referencedTableName="game" referencedColumnNames="id"/>
-        <addForeignKeyConstraint constraintName="fk_game_genre"
-                                 baseTableName="game_genre" baseColumnNames="genre_id"
+        <addForeignKeyConstraint constraintName="fk_game_genres"
+                                 baseTableName="game_genres" baseColumnNames="genres_id"
                                  referencedTableName="genre" referencedColumnNames="id" />
     </changeSet>
 
