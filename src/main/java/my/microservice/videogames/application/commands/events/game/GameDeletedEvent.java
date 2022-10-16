@@ -1,8 +1,7 @@
 package my.microservice.videogames.application.commands.events.game;
 
-import my.microservice.videogames.cross_cutting.cqrs.Event;
-import my.microservice.videogames.cross_cutting.events.GameEvents;
-import my.microservice.videogames.domain.models.Game;
+import my.artifacts.Event;
+import my.microservice.videogames.infrastructure.events.GameEvents;
 
 public class GameDeletedEvent extends Event {
     private Long deletedId;

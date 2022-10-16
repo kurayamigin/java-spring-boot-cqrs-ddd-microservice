@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.fge.jsonpatch.JsonPatch;
 import com.github.fge.jsonpatch.JsonPatchException;
-import my.microservice.videogames.application.commands.dtos.ICommand;
+import my.artifacts.abstractions.ICommand;
 import my.microservice.videogames.cross_cutting.exceptions.PatchException;
 
 public class RestPatchUtils {

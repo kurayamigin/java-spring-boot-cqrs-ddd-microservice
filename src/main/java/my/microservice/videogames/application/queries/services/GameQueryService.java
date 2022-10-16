@@ -18,8 +18,8 @@ public class GameQueryService implements IGameQueryService {
 
     @Override
     public List<GameQuery> get() {
-        List<GameQuery> games = gameRepository.findAll();
-        return games;
+        List<GameQuery> queries = gameRepository.findAll();
+        return queries;
     }
 
     @Override

@@ -11,7 +11,7 @@
                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
 >
     <changeSet id="1" author="user">
-        <createTable tableName="Publisher">
+        <createTable tableName="publisher">
             <column autoIncrement="true" name="id" type="${key}">
                 <constraints primaryKey="true"/>
             </column>

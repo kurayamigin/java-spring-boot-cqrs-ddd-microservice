@@ -1,7 +1,7 @@
 package my.microservice.videogames.application.commands.dtos;
 
+import my.artifacts.abstractions.ICommand;
 import my.microservice.videogames.cross_cutting.validators.ValidDate;
-import my.microservice.videogames.domain.models.Company;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotNull;

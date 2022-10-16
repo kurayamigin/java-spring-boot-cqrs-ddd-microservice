@@ -12,7 +12,7 @@
 >
 
     <changeSet author="me" id="1">
-        <createTable tableName="Genre">
+        <createTable tableName="genre">
             <column autoIncrement="true" name="id" type="${key}">
                 <constraints primaryKey="true"/>
             </column>
@@ -21,7 +21,7 @@
         </createTable>
     </changeSet>
     <changeSet id="2" author="me">
-        <addColumn tableName="Genre">
+        <addColumn tableName="genre">
             <column name="created_date" type="timestamp with time zone" defaultValueComputed="CURRENT_TIMESTAMP">
                 <constraints nullable="false"/>
             </column>

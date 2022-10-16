@@ -1,11 +1,8 @@
 package my.microservice.videogames.application.queries.dtos;
 
-import my.microservice.videogames.cross_cutting.validators.ValidDate;
-import org.hibernate.validator.constraints.Length;
-import org.springframework.data.mongodb.core.mapping.DBRef;
+import my.artifacts.Query;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Document(collection = "company")

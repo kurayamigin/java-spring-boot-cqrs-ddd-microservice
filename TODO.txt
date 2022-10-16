@@ -1,6 +1,10 @@
 TODO list
 
+- DONE: Separate service transactions from rabbit publishers
+- restructure folders
 - Resilience on db connections.
 - lombok
 - Mongo transactions
 - Created/Updated by...
+- CORS
+- internationalization

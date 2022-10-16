@@ -15,7 +15,7 @@
     </preConditions>
     <changeSet id="1" author="me">
         <createTable tableName="game_genres">
-            <column name="id" type="${key}">
+            <column name="id" type="${key}" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="game_id" type="${key}">

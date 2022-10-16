@@ -1,7 +1,7 @@
 package my.microservice.videogames.application.commands.events.game;
 
-import my.microservice.videogames.cross_cutting.cqrs.Event;
-import my.microservice.videogames.cross_cutting.events.GameEvents;
+import my.artifacts.Event;
+import my.microservice.videogames.infrastructure.events.GameEvents;
 import my.microservice.videogames.domain.models.Game;
 
 public class GameCreatedEvent extends Event {

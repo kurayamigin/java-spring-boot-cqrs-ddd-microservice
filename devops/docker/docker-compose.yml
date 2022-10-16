@@ -20,6 +20,19 @@ services:
       MONGO_INITDB_ROOT_USERNAME: mongo
       MONGO_INITDB_ROOT_PASSWORD: Admin123
 
+  #POSTGRESQL
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: dbuser
+      POSTGRES_PASSWORD: Admin123
+
 volumes:
   rabbitmq_data:
   mongo_data:
+  postgres_data:

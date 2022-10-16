@@ -1,5 +1,6 @@
 package my.microservice.videogames.application.commands.dtos;
 
+import my.artifacts.abstractions.ICommand;
 import my.microservice.videogames.cross_cutting.validators.ValidDate;
 import org.hibernate.validator.constraints.Length;
 
@@ -18,7 +19,7 @@ public class SeriesCommand implements ICommand {
     private Date releaseDate;
 
     @NotEmpty
-    private List<GameCommand> games;
+    private List<Long> gameIds;
 
     public String getName() {
         return name;
@@ -36,11 +37,11 @@ public class SeriesCommand implements ICommand {
         this.releaseDate = releaseDate;
     }
 
-    public List<GameCommand> getGames() {
-        return games;
+    public List<Long> getGameIds() {
+        return gameIds;
     }
 
-    public void setGames(List<GameCommand> games) {
-        this.games = games;
+    public void setGameIds(List<Long> gameIds) {
+        this.gameIds = gameIds;
     }
 }

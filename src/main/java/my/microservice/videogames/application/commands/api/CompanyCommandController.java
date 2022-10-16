@@ -23,11 +23,11 @@ public class CompanyCommandController {
     }
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody @Valid CompanyCommand command) {
-        CompletableFuture.runAsync(() -> commandService.create(command)).join();
+    public ResponseEntity<Long> create(@RequestBody @Valid CompanyCommand command) {
+        Long created = CompletableFuture.supplyAsync(() -> commandService.create(command)).join();
         return ResponseEntity
                 .created(ServletUriComponentsBuilder.fromCurrentRequestUri().build().toUri())
-                .build();
+                .body(created);
     }
 
     @DeleteMapping("{id}")

@@ -1,11 +1,9 @@
 package my.microservice.videogames.application.queries.dtos;
 
-import my.microservice.videogames.cross_cutting.validators.ValidDate;
-import org.hibernate.validator.constraints.Length;
+import my.artifacts.Query;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Document(collection = "developer")
@@ -16,7 +14,7 @@ public class DeveloperQuery extends Query<Long> {
     private Date founded;
 
     @DBRef
-    private CompanyQuery parentCompanyId;
+    private CompanyQuery parentCompany;
 
     public String getName() {
         return name;
@@ -34,11 +32,11 @@ public class DeveloperQuery extends Query<Long> {
         this.founded = founded;
     }
 
-    public CompanyQuery getParentCompanyId() {
-        return parentCompanyId;
+    public CompanyQuery getParentCompany() {
+        return parentCompany;
     }
 
-    public void setParentCompanyId(CompanyQuery parentCompanyId) {
-        this.parentCompanyId = parentCompanyId;
+    public void setParentCompany(CompanyQuery parentCompany) {
+        this.parentCompany = parentCompany;
     }
 }

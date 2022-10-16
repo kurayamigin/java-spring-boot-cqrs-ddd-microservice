@@ -1,9 +1,7 @@
 package my.microservice.videogames.application.commands.events.series;
 
-import my.microservice.videogames.cross_cutting.cqrs.Event;
-import my.microservice.videogames.cross_cutting.events.CompanyEvents;
-import my.microservice.videogames.cross_cutting.events.SeriesEvents;
-import my.microservice.videogames.domain.models.Company;
+import my.artifacts.Event;
+import my.microservice.videogames.infrastructure.events.SeriesEvents;
 
 public class SeriesDeletedEvent extends Event {
     private Long deletedId;

@@ -1,8 +1,8 @@
 package my.microservice.videogames.infrastructure.mappers;
 
+import my.artifacts.abstractions.ICommand;
+import my.artifacts.abstractions.IQuery;
 import my.artifacts.models.abstractions.IEntity;
-import my.microservice.videogames.application.commands.dtos.ICommand;
-import my.microservice.videogames.application.queries.dtos.IQuery;
 import org.mapstruct.MappingTarget;
 
 public interface IEntityPatcher<

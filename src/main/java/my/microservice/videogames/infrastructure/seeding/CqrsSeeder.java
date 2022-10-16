@@ -1,11 +1,9 @@
 package my.microservice.videogames.infrastructure.seeding;
 
+import my.artifacts.abstractions.ICommand;
+import my.artifacts.abstractions.IQuery;
 import my.artifacts.models.abstractions.IEntity;
-import my.microservice.videogames.application.commands.dtos.ICommand;
-import my.microservice.videogames.application.queries.dtos.IQuery;
-import my.microservice.videogames.application.queries.dtos.PublisherQuery;
 import my.microservice.videogames.cross_cutting.utils.CsvBeanReader;
-import my.microservice.videogames.cross_cutting.utils.seeding.CsvBean;
 import my.microservice.videogames.infrastructure.mappers.IEntityMapper;
 import my.microservice.videogames.infrastructure.repositories.commands.ICommandRepository;
 import my.microservice.videogames.infrastructure.repositories.queries.IQueryRepository;

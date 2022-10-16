@@ -1,15 +1,13 @@
 package my.microservice.videogames.application.queries.dtos;
 
-import my.microservice.videogames.application.commands.dtos.GameCommand;
-import my.microservice.videogames.cross_cutting.validators.ValidDate;
+import my.artifacts.Query;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 import java.util.List;
 
-@Document(collection = "game")
+@Document(collection = "series")
 public class SeriesQuery extends Query<Long> {
 
     private String name;

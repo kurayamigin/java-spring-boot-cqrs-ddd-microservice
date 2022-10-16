@@ -2,10 +2,12 @@ server:
   port: 8081
 spring:
   datasource:
-    url: jdbc:h2:tcp://localhost:9090/mem:dev;MODE=LEGACY
+    url: jdbc:postgresql://localhost:5432/dbuser
     username: dbuser
-    password: letmein
-    driver-class-name: org.h2.Driver
+    password: Admin123
+    hikari:
+      initialization-fail-timeout: -1
+
   liquibase:
     change-log: classpath:data/liquibase/dbchangelog.xml
     parameters:
@@ -22,7 +24,14 @@ spring:
     password: Admin123
   jpa:
     show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
-  
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace

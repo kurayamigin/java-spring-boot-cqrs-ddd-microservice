@@ -1,5 +1,6 @@
 package my.microservice.videogames.application.queries.dtos;
 
+import my.artifacts.Query;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;

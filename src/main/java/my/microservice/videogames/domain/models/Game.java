@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.Length;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Game extends AuditableLogicEntity<Long> {
@@ -21,8 +22,8 @@ public class Game extends AuditableLogicEntity<Long> {
     @ManyToOne
     private Publisher publisher;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    private List<Genre> genres;
+    @ManyToMany
+    private Set<Genre> genres;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "release_date")
@@ -68,5 +69,13 @@ public class Game extends AuditableLogicEntity<Long> {
 
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    public Set<Genre> getGenres() {
+        return genres;
+    }
+
+    public void setGenres(Set<Genre> genres) {
+        this.genres = genres;
     }
 }

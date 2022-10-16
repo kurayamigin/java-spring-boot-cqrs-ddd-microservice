@@ -1,9 +1,9 @@
 package my.microservice.videogames.application.commands.dtos;
 
+import my.artifacts.abstractions.ICommand;
 import my.microservice.videogames.cross_cutting.validators.ValidDate;
 import org.hibernate.validator.constraints.Length;
 
-import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 

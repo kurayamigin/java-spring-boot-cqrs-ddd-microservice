@@ -18,15 +18,15 @@
             </column>
             <column name="name" type="VARCHAR(255)"/>
             <column name="founded" type="date"/>
-            <column name="website_url" type="VARCHAR(255)"/>
-            <column name="icon_url" type="VARCHAR(255)"/>
+            <column name="website_url" type="text"/>
+            <column name="icon_url" type="text"/>
             <column name="parent_company_id" type="${key}"/>
         </createTable>
     </changeSet>
     <changeSet id="2" author="me">
         <addForeignKeyConstraint constraintName="fk_developer_parent_company"
                                  baseTableName="developer" baseColumnNames="parent_company_id"
-                                 referencedTableName="Company" referencedColumnNames="id"/>
+                                 referencedTableName="company" referencedColumnNames="id"/>
     </changeSet>
     <changeSet id="3" author="me">
         <addColumn tableName="developer">

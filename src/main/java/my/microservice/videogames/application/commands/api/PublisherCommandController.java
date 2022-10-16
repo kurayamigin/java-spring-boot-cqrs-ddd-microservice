@@ -25,11 +25,11 @@ public class PublisherCommandController {
     }
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody @Valid PublisherCommand command) {
-        CompletableFuture.runAsync(() -> commandService.create(command)).join();
+    public ResponseEntity<Long> create(@RequestBody @Valid PublisherCommand command) {
+        Long created = CompletableFuture.supplyAsync(() -> commandService.create(command)).join();
         return ResponseEntity
                 .created(ServletUriComponentsBuilder.fromCurrentRequestUri().build().toUri())
-                .build();
+                .body(created);
     }
 
     @DeleteMapping("{id}")
